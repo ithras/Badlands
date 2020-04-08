@@ -5,10 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 	public float actionAmount { get; private set; }
-	private float speed = 60f;
+	public float speed { get; private set; }
 	private Transform target;
 	private bool seekTarget;
-	private Vector3 shootingDir;
+	public Vector3 shootingDir { get; private set; }
 	public Vector3 direction { get; private set; }
 	private Rigidbody bulletRB;
 
@@ -16,13 +16,9 @@ public class Bullet : MonoBehaviour
 	public void SetSeekTarget(bool seekTarget) => this.seekTarget = seekTarget;
 	public void SetShootingPoint(Vector3 shootingDir) => this.shootingDir = shootingDir;
 
-	void Start() 
+	void Start()
 	{
-		bulletRB = GetComponent<Rigidbody>();
-		if (bulletRB == null)
-			return;
-
-		bulletRB.AddForce(shootingDir * speed, ForceMode.VelocityChange);
+		speed = 60f;
 	}
 
 	void Update()

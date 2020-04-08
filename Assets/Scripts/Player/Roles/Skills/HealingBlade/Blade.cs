@@ -7,9 +7,18 @@ public class Blade : Bullet
     private GameObject[] targets;
     private float activeTime;
     private float range;
+    private Rigidbody bulletRB;
 
     public void SetActiveTime(float activeTime) => this.activeTime = activeTime;
     public void SetRange(float range) => this.range = range;
+
+    void Start()
+    {
+        bulletRB = gameObject.AddComponent<Rigidbody>();
+        bulletRB.useGravity = false;
+        bulletRB.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+        bulletRB.AddForce(shootingDir * speed, ForceMode.VelocityChange);
+    }
 
     void OnTriggerEnter()
     {
