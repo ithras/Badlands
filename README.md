@@ -3,10 +3,10 @@
 **Prototype** Shooter in Unity
 
 ***Controls***
--```WASD```: Movement
--```Left Click```: Shoot
--```Space```: Jump
--```Q```: Skill
+- ```WASD```: Movement
+- ```Left Click```: Shoot
+- ```Space```: Jump
+- ```Q```: Skill
 
 ***Classes Available***
 - :white_check_mark:Technician: equipped with a turret skill. 
