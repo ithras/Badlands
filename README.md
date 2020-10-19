@@ -2,4 +2,4 @@
 
 	Sci-fi Horde Survival Shooter
 
-! [](Badlands.gif)
+![](Badlands.gif)
