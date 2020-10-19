@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class NameInput : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] private Text nameInputField = null;
+    [SerializeField] private TMP_InputField nameInputField = null;
     [SerializeField] private Button confirmButton = null;
 
     public static string DisplayName { get; private set; }

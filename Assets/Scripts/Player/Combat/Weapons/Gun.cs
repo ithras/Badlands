@@ -13,6 +13,7 @@ public class Gun : Weapon
 	[SerializeField] private FireModes fireMode = FireModes.Auto;
 	[SerializeField] private bool moreFireModes = false;
 	[SerializeField] private FireModes[] fireModes = new FireModes[2];
+	[SerializeField] private Transform shootingPoint;
 	[SerializeField] private int magAmmo = 0;
 	[SerializeField] private int magMaxAmmo = 0;
 	[SerializeField] private bool isPrimary = true;
@@ -128,7 +129,7 @@ public class Gun : Weapon
 
 	private void HitScanShot()
 	{
-		if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var target, GetRange))
+		if(Physics.Raycast(shootingPoint.position, shootingPoint.forward, out var target, GetRange))
 		{
 			Debug.Log(target.collider.name);
 

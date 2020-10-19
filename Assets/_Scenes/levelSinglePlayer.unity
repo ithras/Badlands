@@ -3081,7 +3081,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 1.5244924e-38, z: 1.496942e-38, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3972,6 +3972,11 @@ PrefabInstance:
       propertyPath: objectToChase
       value: 
       objectReference: {fileID: 7447997159727233111}
+    - target: {fileID: 6201646657205275070, guid: fa1bbdb9ebe2c174c94bb03c56ada0d7,
+        type: 3}
+      propertyPath: secondsBetweenSpawn
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa1bbdb9ebe2c174c94bb03c56ada0d7, type: 3}
 --- !u!1001 &865155517
@@ -15305,9 +15310,19 @@ PrefabInstance:
       propertyPath: ammoManager
       value: 
       objectReference: {fileID: 7447997159727233101}
+    - target: {fileID: 4215430786254160042, guid: 846569b8ff5ab0943bae844925e1cbeb,
+        type: 3}
+      propertyPath: shootingPoint
+      value: 
+      objectReference: {fileID: 1629603407}
     - target: {fileID: 5393503874948340981, guid: 846569b8ff5ab0943bae844925e1cbeb,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868271761416267848, guid: 846569b8ff5ab0943bae844925e1cbeb,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7447997159727233100, guid: 846569b8ff5ab0943bae844925e1cbeb,
@@ -15335,6 +15350,11 @@ PrefabInstance:
       propertyPath: fireMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7490732444591940659, guid: 846569b8ff5ab0943bae844925e1cbeb,
+        type: 3}
+      propertyPath: shootingPoint
+      value: 
+      objectReference: {fileID: 1629603407}
     - target: {fileID: 8668953560873442770, guid: 846569b8ff5ab0943bae844925e1cbeb,
         type: 3}
       propertyPath: m_IsActive
@@ -15533,24 +15553,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2275748410562170348}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7447997159727233100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7447997159727233099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2113bf78205ca12489d21bbca1cec412, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingPoint: {fileID: 1629603407}
-  bladePrefab: {fileID: 4765255680594887598, guid: 9a4fb7234a1d14e478b0040f15b8b4cf,
-    type: 3}
-  healingTotalAmount: 25
-  healingBladeCoolDown: 2
-  healingBuffActiveTime: 5
 --- !u!114 &7447997159727233101 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7447997159727233103, guid: 846569b8ff5ab0943bae844925e1cbeb,
@@ -15563,6 +15565,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be3acc08eb18994b8f6f4c5292d7fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7447997159727233102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447997159727233099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe7a72730d24ad44b0bd0a1be9ec40f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretPrefab: {fileID: 3664669848401008479, guid: f0bd2d7c5c04b0f47ac6507bcc07cd09,
+    type: 3}
+  shootingPoint: {fileID: 1629603407}
+  turretSkillCoolDown: 30
+  turretActiveTime: 20
 --- !u!4 &7447997159727233111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8703642698367579558, guid: 846569b8ff5ab0943bae844925e1cbeb,
